@@ -2,12 +2,14 @@
 
 require 'function.php';
 
+
 if (!isset($_SESSION["login"])) {
 	header("Location: login.php");
 	exit;
 }
 
-
+// $id = $_SESSION["id_user"];
+// echo $id;
 
 
 ?>
