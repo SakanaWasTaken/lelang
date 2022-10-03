@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.judul {
+	text-decoration: none;
+	color: black;
+	font-size: 30px;
+}
+
+header {
+	/* border: black 1px solid; */
+	width: 100%;
+	height: 140px;
+	border-radius: 5px;
+	background: rgb(75, 198, 229);
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+header img {
+	width: 150px;
+	height: 100px;
+	margin-left: 30px;
+}
+
+.info p{
+	margin-left: 10px;
+	font-size: 25px;
+	color: black;
+}
+
+.bid {
+	width: auto;
+	height: 500px;
+	border-radius: 5px;
+	background-color: white;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	
+}
+
+.tabel {
+	border: black 1px solid;
+	border-radius: 5px;
+	background-color: white;
+	width: 100%;
+	
+}
+
+th, td {
+	border: 1px black solid;
+	height: 60px;
+}
+
+.masukbid {
+	width: 100%;
+	height: 100px;
+	background: rgb(131, 222, 255);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+.masukbid input {
+	width: 930px;
+	height: 50px;
+	border: 1px solid black;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	align-items: center;
+	border-radius: 3px;
+	font-size: 25px;
+}
+
+.masukbid button {
+	width: 650px;
+	height: 50px;
+	border-radius: 3px;
+	font-size: 25px;
+	cursor: pointer;
+}

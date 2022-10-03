@@ -1,0 +1,112 @@
+body {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(white, rgb(146, 227, 253));
+}
+
+.lelang {
+    color: #444;
+}
+
+.gambar img {
+    width: 260px;
+	height: 190px;
+}
+
+.gambar {
+    display: flex;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: lightblue;
+}
+
+header {
+    /* display: block;
+    margin-bottom: 50px;
+    border: 1px white solid; */
+    padding: 20px 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #f0f0f0;
+	background: rgb(66, 194, 226);
+}
+
+.detail p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+
+.info p {
+    margin: 0%;
+}
+
+.detail {
+    width: 410px;
+    height: 145px;
+    /* border: 1px solid black;
+    background: lightblue; */
+    padding: 10px 10px 1px 10px;
+    flex-direction: column;
+    /* margin-left: 10px; */
+}
+
+.info {
+    width: 410px;
+    height: 145px;
+    /* border: 1px solid black;
+    background: lightblue; */
+    padding: 10px 10px 1px 10px;
+    flex-direction: column;
+    font-size: 20px;
+    /* margin-left: 10px; */
+}
+
+.content {
+    display: grid;
+    gap: 5px;
+}
+
+.join {
+    color: black;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background: rgb(65, 255, 65);
+    text-decoration: none;
+    display: flex;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    /* right: 40px ; */
+}
+
+button, .join:hover {
+    background: lime;
+}
+
+.infop {
+    height: 200px;
+    width: auto;
+    margin-top: 10px;
+    /* border: 1px black solid; */
+    border-radius: 10px;
+    font-size: 25px;
+    background: white;
+}
+
+.judul {
+    height: auto;
+    width: auto;
+    background: lightgrey;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.isi p {
+    margin: 0px;
+}
