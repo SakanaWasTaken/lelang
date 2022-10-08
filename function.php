@@ -103,17 +103,17 @@ function addBid($post)
 function tambah($post)
 {
     global $koneksi;
-    // $username = $_POST["username"];
-    $username = $_POST["username"];
-    $merek = $_POST["merek"];
-    $tipe = $_POST["tipe"];
-    $gambar = $_POST["gambar"];
-    $thn_buat = $_POST["thn_buat"];
-    $harga_awal = $_POST["harga_awal"];
-    $tanggal_tutup = $_POST["tanggal_tutup"];
+    $id_user = $post["id_user"];
+    $username = $post["username"];
+    $merek = $post["merek"];
+    $tipe = $post["tipe"];
+    $gambar = $post["gambar"];
+    $thn_buat = $post["thn_buat"];
+    $harga_awal = $post["harga_awal"];
+    $tanggal_tutup = $post["tanggal_tutup"];
 
 
-    $query = "INSERT INTO produk VALUES ('', '', $username, '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup')";
+    $query = "INSERT INTO produk VALUES ('', '$id_user', $username, '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup')";
 
     mysqli_query($koneksi, $query);
 

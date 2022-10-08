@@ -2,6 +2,13 @@
 
 require 'function.php';
 
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+}
+
+var_dump($_POST);
+
+
 if (isset($_POST["submit"])) {
 
     if (tambah($_POST) > 0) {
@@ -10,6 +17,11 @@ if (isset($_POST["submit"])) {
         echo "<script>alert('Barang gagal Dimasukan')</script>";
     }
 }
+
+$id_user = $_SESSION["login"];
+$table_username = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'");
+$row_username = mysqli_fetch_assoc($table_username);
+$username = $row_username["username"];
 
 
 ?>
@@ -28,7 +40,8 @@ if (isset($_POST["submit"])) {
     <form action="" method="post">
         <div>
             <label for="username">Masukan Nama Pelelang</label>
-            <input type="text" name="username" id="username" name="username">
+            <input type="hidden" name="id_user" value="<?= $id_user ?>">
+            <input type="text" name="username" id="username" name="username" value="<?= $username ?>">
         </div>
         <div>
             <label for="merek">Merek</label>

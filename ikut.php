@@ -47,7 +47,7 @@ $timestamp = $dt->format('Y-m-d G:i:s');
         <header>
             <?php foreach ($mobil as $row) : ?>
                 <div class="info">
-                    <p><?php echo $row["merek"] ?>,<?php echo $row["tipe"] ?></p>
+                    <p><?php echo $row["merek"] ?> <?php echo $row["tipe"] ?></p>
                     <p><?php echo $row["username"] ?></p>
                     <p><?php echo $row["tanggal_tutup"] ?></p>
                 </div>
