@@ -91,13 +91,7 @@ function addBid($post)
     $bid = $post["nominal"];
     $tanggal = $post["tanggal"];
     mysqli_query($koneksi, "INSERT INTO tab_lelang VALUES('','$id_barang','$id_user','$username','$harga_barang','$bid','$tanggal')");
-    // if (mysqli_affected_rows($koneksi) == 1) {
-    //     echo "
-    //        <script>
-    //             alert('Bid berhasil di tambahkan!');
-    //        </script>
-    //     ";
-    // }
+
 }
 
 function tambah($post)
@@ -113,9 +107,12 @@ function tambah($post)
     $tanggal_tutup = $post["tanggal_tutup"];
 
 
-    $query = "INSERT INTO produk VALUES ('', '$id_user', $username, '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup')";
 
+    $query = "INSERT INTO produk VALUES ('', $id_user, '$username', '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup')";
     mysqli_query($koneksi, $query);
+
+    var_dump($query);
+
 
     return mysqli_affected_rows($koneksi);
 }

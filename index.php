@@ -9,9 +9,8 @@ if (!isset($_SESSION["login"])) {
 }
 
 $id_user = $_SESSION["login"];
-$table_username = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'");
-$row_username = mysqli_fetch_assoc($table_username);
-$username = $row_username["username"];
+$user = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'");
+$row_username = mysqli_fetch_assoc($user);
 
 ?>
 
@@ -51,7 +50,7 @@ $username = $row_username["username"];
 				<li><a href="index.php?page=home">HOME</a></li>
 			</ul>
 		</div>
-		<a href=" mulai.php?id=<?php $table_username[$id_user] ?>" class="buat">
+		<a href="mulai.php?id=<?php $id_user ?>" class="buat">
 			<img src="properti/icons8-plus-48.png" alt="Buat Lelang">
 			<span>buat lelang baru</span>
 		</a>
