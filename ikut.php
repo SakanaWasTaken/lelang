@@ -19,8 +19,11 @@ if (isset($_POST["submit"])) {
 }
 
 // sebelum ngebid check dulu si user ini yg login udh ngebid apa belum nah disini misalnya gua bikin variabel asal namanya check_bid nah nanti variabel ini di check di bagian tr nya (liat ke bawah)
-$check_Bid = mysqli_query($koneksi, "SELECT * FROM tab_lelang WHERE id_user='$id_user'");
-$result = query("SELECT * FROM tab_lelang WHERE id_user='$id_user' AND id_barang='$id_mobil'");
+$check_Bid = mysqli_query($koneksi, "SELECT * FROM tab_lelang WHERE id_user=$id_user");
+// var_dump($check_Bid);
+// var_dump($id_user);
+// die;
+$result = query("SELECT * FROM tab_lelang WHERE id_barang='$id_mobil'");
 $mobil =  query("SELECT * FROM produk WHERE id_mobil='$id_mobil'");
 
 // ngambil tanggal dan waktu 
@@ -61,23 +64,13 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                     <th bgcolor="lightblue">TANGGAL</th>
                     <th bgcolor="lightblue">BID</th>
                 </tr>
-                <!-- cek nya disini kalo misalnya lebih dari satu tampilin yang udah masuk ke dalam database gitu -->
-                <?php if (mysqli_num_rows($check_Bid) >= 1) : ?>
-                    <?php foreach ($result as $key) : ?>
-                        <tr>
-                            <td><?= $key["username"] ?></td>
-                            <td><?= $key["tanggal"] ?></td>
-                            <td><?= $key["bid"] ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                <!--  kalo belom gada apa2 -->
-                <?php else : ?>
+                 <?php foreach ($result as $key) : ?>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td><?= $key["username"] ?></td>
+                        <td><?= $key["tanggal"] ?></td>
+                        <td><?= $key["bid"] ?></td>
                     </tr>
-                <?php endif; ?>
+                <?php endforeach; ?>
             </table>
         </div>
         <form action="" method="post">

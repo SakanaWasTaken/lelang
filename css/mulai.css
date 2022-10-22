@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -10,28 +11,43 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     
 }
 
 .wadah {
-    border: 1px solid lawngreen;
+    /* border: 1px solid lawngreen; */
+    background: rgb(199, 199, 199);
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px lightblue;
     justify-content: center;
     display: flex;
-    /* align-items: center; */
-    width: 500px;
-    height: 500px;
+    align-items: center;
+    width: 300px;
+    height: 480px;
 }
 
-
-.input-box input {
-    height: 20px;
-    width: 200px;
-    /* margin: 20px; */
+.input-box label {
+    margin-bottom: 5px;
     
 }
 
-.button {
-    height: 20px;
+.input-box input {
+    height: 30px;
     width: 200px;
-    /* margin: 20px; */
+    border: none;
+    font-size: 15px;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.button {
+    border: none;
+    height: 30px;
+    width: 200px;
+    background-color: greenyellow;
+    margin-top: 10px;
+    border-radius: 10px;
 }

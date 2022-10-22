@@ -12,7 +12,6 @@ function register($post)
     $alamat = $post["alamat"];
     $telp = $post["telp"];
     $email = $post["email"];
-    $hak_akses = $post["hak_akses"];
     $password = $post["password"];
     $password2 = $post["password2"];
 
@@ -34,7 +33,7 @@ function register($post)
         return false;
     } else {
         $enkripsi = password_hash($post["password"], PASSWORD_DEFAULT);
-        mysqli_query($koneksi, "INSERT INTO user VALUES('','$username','$alamat', '$telp' , '$email' , '$hak_akses' , '$enkripsi')");
+        mysqli_query($koneksi, "INSERT INTO user VALUES('','$username','$alamat', '$telp' , '$email' , '$enkripsi')");
         if (mysqli_affected_rows($koneksi) == 1) {
             echo "<script>
                     alert('Berhasil Daftar!');
@@ -62,6 +61,11 @@ function login($post)
 
     if (password_verify($password, $rows["password"])) {
         $_SESSION["login"] = $rows["id_user"];
+        // $_SESSION["login"] = $rows["username"];
+        // $_SESSION["login"] = $rows["alamat"];
+        // $_SESSION["login"] = $rows["no_telp"];
+        // $_SESSION["login"] = $rows["email"];
+        
         echo "
            <script>
                 alert('anda berhasil login!');
@@ -111,7 +115,7 @@ function tambah($post)
     $query = "INSERT INTO produk VALUES ('', $id_user, '$username', '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup')";
     mysqli_query($koneksi, $query);
 
-    var_dump($query);
+    // var_dump($query);
 
 
     return mysqli_affected_rows($koneksi);

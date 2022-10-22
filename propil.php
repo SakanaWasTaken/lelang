@@ -2,15 +2,14 @@
 
 include "function.php";
 
-// if (isset($_POST["profile"])) {
-//     profil($_POST);
-// }
+if (isset($_SESSION["login"])) {
+    $id_user = $_SESSION["login"];
+    $users = query("SELECT * FROM user WHERE id_user=$id_user");
+}
+
+
 
 ?>
-
-
-
-
 
 
 
@@ -32,11 +31,12 @@ include "function.php";
         </div>
         <div class="data">
             <div class="isi">
-                <p name>Nama : blabal</p>
-                <p>Alamat : RUmah jalann 10</p>
-                <p>Telpon : 09293489238</p>
-                <p>status : pembeli</p>
-                <p>Email : nama@gmail123.com</p>
+            <?php foreach ($users as $user): ?>
+                <p>Nama : <?= $user["username"] ?></p>
+                <p>Alamat : <?= $user["alamat"]  ?></p>
+                <p>Telpon : <?= $user["no_telp"] ?></p>
+                <p>Email : <?= $user["email"] ?></p>
+            <?php endforeach; ?>
             </div>
         </div>
     </div>

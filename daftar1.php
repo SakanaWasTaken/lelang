@@ -54,16 +54,6 @@ if (isset($_POST["register"])) {
                     <label for="">Confirm Password</label>
                     <input type="password" placeholder="Confirm Password" name="password2">
                 </div>
-
-                <!-- <br> -->
-                <div class="hak">
-                    <label for="">Daftar Sebagai</label>
-                    <input type="text" name="hak_akses">
-                    <!-- <select name="hak_akses" id="">
-                        <option value="">Penjual / Pelelang</option>
-                        <option value="">Pembeli / Pseserta lelang</option>
-                    </select> -->
-                </div>
                 <button class="sign" type="submit" name="register">Sign in</button>
                 <button class="cancel" formaction="login.php">Cancel</button>
 
