@@ -33,10 +33,10 @@ if (isset($_POST["login"])) {
                 <?php endif; ?>
 
                 <label for="username">Username</label>
-                <input type="text" placeholder="Enter Username" id="username" name="username">
+                <input type="text" placeholder="Enter Username" id="username" name="username" autofocus>
 
                 <label for="">Password</label>
-                <input type="password" placeholder="Enter Password" id="password" name="password">
+                <input type="password" placeholder="Enter Password" id="password" name="password" autofocus>
 
                 <div><button Type="submit" name="login" class="log">log in</button></div>
                 <div><button type="submit" formaction="daftar1.php" class="sign">Sign up</button></div>

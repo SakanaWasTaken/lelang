@@ -25,11 +25,12 @@ $check_Bid = mysqli_query($koneksi, "SELECT * FROM tab_lelang WHERE id_user=$id_
 // die;
 $result = query("SELECT * FROM tab_lelang WHERE id_barang='$id_mobil'");
 $mobil =  query("SELECT * FROM produk WHERE id_mobil='$id_mobil'");
+// $newbid = $post["nominal"];
 
-// ngambil tanggal dan waktu 
 $tz = 'Asia/Jakarta';
 $dt = new DateTime("now", new DateTimeZone($tz));
 $timestamp = $dt->format('Y-m-d G:i:s');
+
 
 ?>
 
@@ -68,7 +69,7 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                     <tr>
                         <td><?= $key["username"] ?></td>
                         <td><?= $key["tanggal"] ?></td>
-                        <td><?= $key["bid"] ?></td>
+                        <td>Rp. <?= $key["bid"] ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

@@ -55,11 +55,11 @@ $barang = query("SELECT * FROM produk WHERE id_mobil='$id'");
                 </div>
             </div>
             <div class="infop">
-                <div class="judul">Data Diri Pelelang</div>
+                <div class="judul">Deskripsi Mobil</div>
                 <div class="isi">
-                    <p>Alamat : Rumah</p>
-                    <p>Kontak : 093928932</p>
-                    <p>Email : nama@gmail.com</p>
+                    <p>Warna merah, perawatan bagus</p>
+                    <!-- <p>Kontak : 093928932</p> -->
+                    <!-- <p>Email : nama@gmail.com</p> -->
                 </div>
             </div>
         </div>

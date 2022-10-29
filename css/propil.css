@@ -20,15 +20,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
-    background: white;
+    background: rgb(199, 199, 199);
+    box-shadow: 10px 10px 5px lightblue;
 }
 
 .pic {
     width: auto;
     height: 150px;
-    border: 1px blue solid;
+    /* border: 1px blue solid; */
     margin: 5px;
 }
 
@@ -41,7 +42,7 @@ img {
 .data {
     width: auto;
     height: auto;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     margin: 5px;
     padding: 5px;
 }
