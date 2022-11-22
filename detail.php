@@ -9,6 +9,9 @@ if (!isset($_SESSION["login"])) {
 $id = $_GET["id"];
 $barang = query("SELECT * FROM produk WHERE id_mobil='$id'");
 
+$tanggalskrng = date("Y/m/d");
+
+
 
 ?>
 
@@ -49,9 +52,17 @@ $barang = query("SELECT * FROM produk WHERE id_mobil='$id'");
                         <p>Merek : <?php echo $row["merek"] ?></p>
                         <p>Tipe : <?php echo $row["tipe"] ?></p>
                         <p>Tahun buat : <?php echo $row["thn_buat"] ?></p>
-                        <p>Tanggal berakhir : <?php echo $row["tanggal_tutup"] ?></p>
+                        <p>Tanggal berakhir : <?php if ($row["tanggal_tutup"] <= $tanggalskrng) : ?>
+                        <p>lelang sudah berakhir</p>
+                    <?php else : ?>
+                        <p><?= $row["tanggal_tutup"] ?></p>
+                    <?php endif; ?>
                     </div>
-                    <a href="ikut.php?id=<?= $row["id_mobil"] ?>" class="join">Join Lelang</a>
+                    <?php if ($row["tanggal_tutup"] <= $tanggalskrng) : ?>
+                        <p>Pemenang : david al-valaq</p>
+                    <?php else :  ?>
+                        <a href="ikut.php?id=<?= $row["id_mobil"] ?>" class="join" disabled>Join Lelang</a>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="infop">

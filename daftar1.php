@@ -32,27 +32,27 @@ if (isset($_POST["register"])) {
                 </div>
                 <div class="input-box">
                     <label for="">Username</label>
-                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="username" placeholder="Username" autofocus>
                 </div>
                 <div class="input-box">
                     <label for="">Masukan Alamat</label>
-                    <input type="text" name="alamat" placeholder="Masukan Alamat">
+                    <input type="text" name="alamat" placeholder="Masukan Alamat" autofocus>
                 </div>
                 <div class="input-box">
                     <label for="">Nomer Telpon</label>
-                    <input type="text" name="telp" placeholder="Masukan Nomer Telpon">
+                    <input type="text" name="telp" placeholder="Masukan Nomer Telpon" autofocus>
                 </div>
                 <div class="input-box">
                     <label for="">Email</label>
-                    <input type="text" name="email" placeholder="Enter email">
+                    <input type="text" name="email" placeholder="Enter email" autofocus>
                 </div>
                 <div class="input-box">
                     <label for="">Password</label>
-                    <input type="password" name="password" placeholder="Enter Password">
+                    <input type="password" name="password" placeholder="Enter Password" autofocus>
                 </div>
                 <div class="input-box">
                     <label for="">Confirm Password</label>
-                    <input type="password" placeholder="Confirm Password" name="password2">
+                    <input type="password" placeholder="Confirm Password" name="password2" autofocus>
                 </div>
                 <button class="sign" type="submit" name="register">Sign in</button>
                 <button class="cancel" formaction="login.php">Cancel</button>

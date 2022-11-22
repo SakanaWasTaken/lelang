@@ -1,7 +1,14 @@
 .container {
 	width: 100%;
 	height: 100vh;
-	display: flex
+	display: flex;
+	flex-wrap: wrap;
+	/* overflow-wrap: normal; */
+	gap: 10px;
+	/* grid: auto / auto auto; */
+	/* grid-auto-columns: auto; */
+	/* grid-template-rows: auto auto; */
+	/* border: 1px red solid; */
 }
 
 .itembox {
@@ -9,7 +16,7 @@
 	width: 80px;
 	border: 1px solid black;
 	padding: 50px;
-	margin: 20px;
+	margin: 15px 15px 0px 15px;
 	height: 170px;
 	display: flex;
 	justify-content: space-around;
@@ -34,6 +41,7 @@ div.itembox .namabrg.hoverover {
 .namabrg {
 	text-decoration: none;
 	margin-top: 10px;
+	margin-bottom: 0px;
 	width: 200px;
 }
 
@@ -46,6 +54,11 @@ div.itembox .namabrg.hoverover {
 .nama {
 	margin: 0px;
 	width: 150px;
+}
+
+.tanggal {
+	width: 100px;
+	margin: 0px;
 }
 
 div .a :hover {

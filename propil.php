@@ -7,6 +7,14 @@ if (isset($_SESSION["login"])) {
     $users = query("SELECT * FROM user WHERE id_user=$id_user");
 }
 
+if (isset($_GET["id_lelang"])) {
+    $id_user = $_GET["id_lelang"];
+    // var_dump($id_user);
+    $users = query("SELECT * FROM user WHERE id_user=$id_user");
+}
+
+
+
 
 
 ?>

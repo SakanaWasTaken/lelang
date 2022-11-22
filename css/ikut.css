@@ -66,6 +66,10 @@ th, td {
 	text-align: center;
 }
 
+td a {
+	text-decoration: none;
+}
+
 .masukbid {
 	width: 100%;
 	height: 100px;
@@ -94,4 +98,8 @@ th, td {
 	border-radius: 3px;
 	font-size: 25px;
 	cursor: pointer;
+}
+
+.hrg {
+	margin-left: 10px;
 }

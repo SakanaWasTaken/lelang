@@ -8,15 +8,16 @@ if (!isset($_SESSION["login"])) {
 }
 
 $id_user = $_SESSION["login"];
-$table_username = mysqli_query($koneksi,"SELECT * FROM user WHERE id_user='$id_user'");
+$table_username = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'");
 $row_username = mysqli_fetch_assoc($table_username);
 $username = $row_username["username"];
-
 $id_mobil = $_GET["id"];
 
 if (isset($_POST["submit"])) {
     addBid($_POST);
 }
+
+$peserta = mysqli_query($koneksi, "SELECT id_user FROM user");
 
 // sebelum ngebid check dulu si user ini yg login udh ngebid apa belum nah disini misalnya gua bikin variabel asal namanya check_bid nah nanti variabel ini di check di bagian tr nya (liat ke bawah)
 $check_Bid = mysqli_query($koneksi, "SELECT * FROM tab_lelang WHERE id_user=$id_user");
@@ -56,6 +57,7 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                     <p><?php echo $row["tanggal_tutup"] ?></p>
                 </div>
                 <img src="properti/<?php echo $row["gambar"] ?>" alt="">
+                <p class="hrg">Harga awal : Rp. <?php echo $row["harga_awal"] ?></p>
             <?php endforeach; ?>
         </header>
         <div class="bid">
@@ -65,9 +67,9 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                     <th bgcolor="lightblue">TANGGAL</th>
                     <th bgcolor="lightblue">BID</th>
                 </tr>
-                 <?php foreach ($result as $key) : ?>
+                <?php foreach ($result as $key) : ?>
                     <tr>
-                        <td><?= $key["username"] ?></td>
+                        <td><a href="propil.php?page=profile&id_lelang=<?= $key["id_user"] ?>"><?= $key["username"] ?></a></td>
                         <td><?= $key["tanggal"] ?></td>
                         <td>Rp. <?= $key["bid"] ?></td>
                     </tr>
@@ -82,7 +84,7 @@ $timestamp = $dt->format('Y-m-d G:i:s');
                     <input type="hidden" name="harga_barang" value="<?= $key["harga_awal"] ?>">
                     <input type="hidden" name="username" value="<?= $username ?>">
                     <input type="hidden" name="tanggal" value="<?= $timestamp ?>">
-                    <input type="text" placeholder="Masukan Bid Anda" name="nominal">
+                    <input type="text" placeholder="Masukan Bid Anda" name="nominal" autofocus>
                     <button type="submit" name="submit">Masukan Bid</button>
                 </div>
             <?php endforeach; ?>

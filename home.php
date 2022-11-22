@@ -27,9 +27,10 @@ $result = mysqli_query($koneksi, "SELECT * FROM produk");
             <?php $id = $row["id_mobil"] ?>
             <div class="itembox">
                 <img src="properti/<?php echo $row["gambar"] ?>" alt="">
-                <a href="detail.php?id=<?php echo $id ?>" class="namabrg"><?php echo $row["merek"] ?> <?php echo $row["tipe"] ?></a><br>
-                <p class="hargabrg"><?php echo $row["harga_awal"] ?></p><br>
-                <p class="nama">oleh : <?php echo $row["username"] ?></p>
+                <a href="detail.php?id=<?php echo $id ?>" class="namabrg"><?php echo $row["merek"] ?> <?php echo $row["tipe"] ?></a>
+                <p class="hargabrg">Rp. <?php echo $row["harga_awal"] ?></p>
+                <p class="nama">Pelelang : <?php echo $row["username"] ?></p>
+                <p class="tanggal">Berakhir pada <?php echo $row["tanggal_tutup"] ?></p>
             </div>
         <?php endwhile; ?>
     </div>

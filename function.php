@@ -91,10 +91,9 @@ function addBid($post)
     $id_barang = $post["id_barang"];
     $id_user = $post["id_user"];
     $username = $post["username"];
-    $harga_barang = $post["harga_barang"];
+    intval($harga_barang = $post["harga_barang"]);
     $bid = $post["nominal"];
     $tanggal = $post["tanggal"];
-    mysqli_query($koneksi, "INSERT INTO tab_lelang VALUES('','$id_barang','$id_user','$username','$harga_barang','$bid','$tanggal')");
 
     if ($bid === $harga_barang) {
         mysqli_query($koneksi, "INSERT INTO tab_lelang VALUES('','$id_barang','$id_user','$username','$harga_barang','$bid','$tanggal')");
@@ -107,13 +106,8 @@ function addBid($post)
                 alert('bid anda dibawah harga');
            </script>
         ";
-        exit;
         return false;
     }
-
-    intval($harga_barang = $post["harga_barang"]);
-
-
 }
 
 function tambah($post)

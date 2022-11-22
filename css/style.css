@@ -49,7 +49,7 @@ header{
 	/* float: right; */
 	width: 80px;
 	height: 80px;
-	margin-left: 570px;
+	margin-left: 640px;
 }
 
 .pp img {
@@ -155,6 +155,10 @@ div.menu ul li a.hoverover {
 
 .buat:hover img {
 	margin-bottom: -3px;
+}
+
+.buat img {
+	align-items: center;
 }
 
 div.badan{

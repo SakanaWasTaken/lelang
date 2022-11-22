@@ -82,7 +82,7 @@ header {
     border: none;
     border-radius: 10px;
     text-decoration: none;
-    /* right: 40px ; */
+    margin-left: 10px;
 }
 
 button, .join:hover {
