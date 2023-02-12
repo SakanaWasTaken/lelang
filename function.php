@@ -61,10 +61,6 @@ function login($post)
 
     if (password_verify($password, $rows["password"])) {
         $_SESSION["login"] = $rows["id_user"];
-        // $_SESSION["login"] = $rows["username"];
-        // $_SESSION["login"] = $rows["alamat"];
-        // $_SESSION["login"] = $rows["no_telp"];
-        // $_SESSION["login"] = $rows["email"];
         
         echo "
            <script>
@@ -117,20 +113,55 @@ function tambah($post)
     $username = $post["username"];
     $merek = $post["merek"];
     $tipe = $post["tipe"];
-    $gambar = $post["gambar"];
     $thn_buat = $post["thn_buat"];
     $harga_awal = $post["harga_awal"];
     $tanggal_tutup = $post["tanggal_tutup"];
+    $deskripsi = $post["deskripsi"];
 
+    $gambar = upload();
+    if (!$gambar) {
+        return false;
+    }
 
-
-    $query = "INSERT INTO produk VALUES ('', $id_user, '$username', '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup')";
+    $query = "INSERT INTO produk VALUES ('', $id_user, '$username', '$merek', '$tipe', '$gambar', '$thn_buat', '$harga_awal', '$tanggal_tutup','$deskripsi')";
     mysqli_query($koneksi, $query);
 
     // var_dump($query);
 
 
     return mysqli_affected_rows($koneksi);
+}
+
+function upload() {
+    $nama_file = $_FILES["gambar"]["name"];
+    $tmp_file = $_FILES["gambar"]["tmp_name"];
+    $size = $_FILES["gambar"]["size"];
+
+    $ekstensiGambarValid = ['jpg','png','jpeg'];
+    $ekstensiGambar = explode('.',$nama_file);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if (!in_array($ekstensiGambar,$ekstensiGambarValid)) {
+        echo"
+                <script>
+                    alert('Yang anda masukkan bukan gambar!');
+                </script>
+            ";
+        return false;
+    }
+
+    if ($size > 1000000) {
+        echo"
+                <script>
+                    alert('ukuran gambar anda terlalu besar!');
+                </script>
+            ";
+        return false;
+    }
+
+    move_uploaded_file($tmp_file,'properti/'.$nama_file);
+
+    return $nama_file;
 }
 
 function query($query)

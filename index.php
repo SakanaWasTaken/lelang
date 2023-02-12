@@ -50,7 +50,7 @@ $row_username = mysqli_fetch_assoc($user);
 				<li><a href="index.php?page=home">HOME</a></li>
 			</ul>
 		</div>
-		<a href="mulai.php?id=<?php $id_user ?>" class="buat">
+		<a href="mulai.php" class="buat">
 			<img src="properti/icons8-plus-48.png" alt="Buat Lelang">
 			<span>buat lelang baru</span>
 		</a>

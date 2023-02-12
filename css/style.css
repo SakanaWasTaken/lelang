@@ -127,12 +127,15 @@ div.menu ul li a.hoverover {
 	width: 70px;
 	height: 70px;
 	border-radius: 100px;
-	border: 0;
-	z-index: 9999;
 	color: white;
 	transition: .2s;
 	bottom: 65px;
 	background: rgb(66, 194, 226);
+	border: none;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .buat:hover {
@@ -143,22 +146,15 @@ div.menu ul li a.hoverover {
  
 .buat span {
 	font-size: 16px;
-	margin-left: 5px;
 	transition: .2s;
-	line-height: 0px;
-	display: none;
-}
-
-.buat:hover span {
-	display: inline-block;
-}
-
-.buat:hover img {
-	margin-bottom: -3px;
+	/* position: fixed; */
+	margin-left: 23px;
 }
 
 .buat img {
-	align-items: center;
+	width: 40px;
+	height: 40px;
+	margin-left: 15px;
 }
 
 div.badan{

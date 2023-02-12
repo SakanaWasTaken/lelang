@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include "function.php";
 
@@ -38,15 +38,18 @@ if (isset($_GET["id_lelang"])) {
             <img src="properti/202-2024792_profile-icon-png.png" alt="">
         </div>
         <div class="data">
-            <div class="isi">
-            <?php foreach ($users as $user): ?>
+        </div>
+    </div>
+    <div class="informasi">
+        <div class="isi">
+            <?php foreach ($users as $user) : ?>
                 <p>Nama : <?= $user["username"] ?></p>
                 <p>Alamat : <?= $user["alamat"]  ?></p>
                 <p>Telpon : <?= $user["no_telp"] ?></p>
                 <p>Email : <?= $user["email"] ?></p>
             <?php endforeach; ?>
-            </div>
         </div>
+
     </div>
 </body>
 
